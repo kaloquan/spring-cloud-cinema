@@ -1,0 +1,26 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: cinema-consumer
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kaloquan:123456@peer1:8761/eureka,http://kaloquan:123456@peer2:8762/eureka
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      name: cinema-consumer
+      version: 1.0
+      description: movie center
+#针对微服务cinema-user的ribbon客户端进行配置
+#cinema-user:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

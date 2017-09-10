@@ -1,0 +1,15 @@
+server:
+  port: 8762
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kaloquan:123456@peer1:8761/eureka
+  instance:
+    hostname: peer2
+spring:
+  application:
+    name: cinema-eureka
+security:
+  user:
+    name: kaloquan
+    password: 123456
